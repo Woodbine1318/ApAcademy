@@ -1090,6 +1090,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/hind@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/hind/-/hind-4.4.5.tgz#185d50db31923ed7b931bd02c6a2bc7fc38532a4"
+  integrity sha512-fUl/nnIYrL4wq9nGGAebt0gWlcPGJtAf5ZvHBVl3/rpqA/a6vku0OENKPD2FNNqM4S8jJxM4bJ3xxMv9R8lycw==
+
+"@fontsource/poppins@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.4.5.tgz#c75dcc453f7a9381de3f9b932366c2457887184c"
+  integrity sha512-pu675yvBGFhAHD8D7uj7C0NaHqDxD7mlgmLM8ziyYL4kYH79fil7rJ6U5X2oaKxoyRk3rxxb9k1fG0CCc7CquA==
+
 "@gatsbyjs/reach-router@^1.3.6":
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/reach-router/-/reach-router-1.3.6.tgz#4e8225836959be247890b66f21a3198a0589e34d"

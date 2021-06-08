@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+import React from 'react';
+import '@fontsource/poppins/600.css';
+import '@fontsource/hind';
+import '@fontsource/hind/600.css';
+import { GlobalStyles } from './src/global.styles';
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => (
+  <>
+    <GlobalStyles />
+
+    {element}
+  </>
+);
