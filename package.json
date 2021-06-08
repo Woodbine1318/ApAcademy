@@ -13,7 +13,8 @@
     "prettier": "prettier . --ignore-path .gitignore",
     "check-format": "yarn prettier --list-different",
     "format": "yarn prettier --write",
-    "validate": "yarn check-format && yarn lint && yarn build"
+    "validate": "yarn check-format && yarn lint && yarn build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "gatsby": "^3.6.2",
@@ -34,6 +35,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-react-app": "^6.0.0",
     "gatsby-plugin-eslint": "^3.0.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
     "prettier": "2.2.1"
   },
   "keywords": [
@@ -46,5 +49,14 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "lint-staged": {
+    "*.+(js|json|jsx)": [
+      "prettier --write",
+      "prettier --list-different"
+    ],
+    "*.(js|jsx)": [
+      "eslint"
+    ]
   }
 }
