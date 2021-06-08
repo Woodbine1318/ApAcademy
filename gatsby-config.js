@@ -29,6 +29,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
-    "gatsby-plugin-eslint",
+    'gatsby-plugin-eslint',
   ],
-}
+};
