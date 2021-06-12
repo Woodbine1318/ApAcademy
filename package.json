@@ -19,22 +19,23 @@
   "dependencies": {
     "@fontsource/hind": "^4.4.5",
     "@fontsource/poppins": "^4.4.5",
-    "babel-plugin-styled-components": "^1.12.0",
+    "autoprefixer": "^10.2.6",
     "gatsby": "^3.6.2",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
     "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-manifest": "^3.6.0",
     "gatsby-plugin-offline": "^4.6.0",
+    "gatsby-plugin-postcss": "^4.7.1",
     "gatsby-plugin-react-helmet": "^4.6.0",
     "gatsby-plugin-sharp": "^3.6.0",
-    "gatsby-plugin-styled-components": "^4.7.0",
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-sharp": "^3.6.0",
+    "postcss": "^8.3.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.0"
+    "tailwindcss": "^2.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
