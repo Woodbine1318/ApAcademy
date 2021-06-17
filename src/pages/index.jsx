@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Pattern from '../components/Pattern';
 import Callout from '../components/Callout';
+import HowItWorks from '../components/HomePage/how-it-works';
 
 const IndexPage = () => (
   <Layout>
@@ -50,6 +51,8 @@ const IndexPage = () => (
     <Callout>
       <p>The AP Academy provides educational recovery support for students who need it most. </p>
     </Callout>
+
+    <HowItWorks />
   </Layout>
 );
 
