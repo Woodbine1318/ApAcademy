@@ -3,8 +3,6 @@ import React from 'react';
 const Pattern = ({ size, className }) => {
   const items = Array.from({ length: size });
 
-  console.log(items);
-
   return (
     <div className={`grid grid-cols-10 gap-2 justify-center items-center w-72 ${className}`}>
       {items.map((_, i) =>
