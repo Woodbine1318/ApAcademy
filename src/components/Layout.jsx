@@ -4,7 +4,7 @@ import Header from './Header';
 
 const Layout = ({ children }) => {
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-background min-h-screen max-w-full overflow-hidden">
       <Header />
 
       {children}

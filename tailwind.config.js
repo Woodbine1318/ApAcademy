@@ -77,6 +77,9 @@ module.exports = {
         '.webkit-mask-image': {
           '-webkit-mask-image': '-webkit-radial-gradient(white, black)',
         },
+        'summary::-webkit-details-marker': {
+          display: 'none',
+        },
       });
     }),
   ],

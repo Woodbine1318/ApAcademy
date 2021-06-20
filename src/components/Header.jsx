@@ -34,8 +34,8 @@ const Header = () => {
 
         <div className="flex flex-row flex-nowrap justify-end items-center md:hidden">
           <details className="relative mr-7">
-            <summary className="flex justify-center items-center font-display w-40 h-16 bg-button-shape bg-no-repeat bg-contain bg-center cursor-pointer">
-              Menu
+            <summary className="relative font-display w-40 h-16 bg-button-shape bg-no-repeat bg-contain bg-center text-center cursor-pointer outline-none">
+              <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Menu</span>
             </summary>
 
             <ul className="absolute top-full left-1/2 transform -translate-x-1/2 text-white font-display text-center py-12 px-16 my-8 w-max">
@@ -62,8 +62,8 @@ const Header = () => {
           </details>
 
           <details className="relative">
-            <summary className="flex justify-center items-center font-display w-40 h-16 bg-button-shape bg-no-repeat bg-contain bg-center cursor-pointer">
-              Contact
+            <summary className="relative font-display w-40 h-16 bg-button-shape bg-no-repeat bg-contain bg-center text-center cursor-pointer outline-none">
+              <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Contact</span>
             </summary>
 
             <ul className="absolute flex flex-col justify-evenly top-full right-0 text-white font-display text-center py-12 px-16 my-8 max-w-sm min-h-80">
