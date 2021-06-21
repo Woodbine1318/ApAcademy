@@ -7,6 +7,7 @@ import SEO from '../components/SEO';
 import Pattern from '../components/Pattern';
 import Callout from '../components/Callout';
 import HowItWorks from '../components/HomePage/how-it-works';
+import Expertise from '../components/HomePage/expertise';
 
 const IndexPage = () => (
   <Layout>
@@ -53,6 +54,8 @@ const IndexPage = () => (
     </Callout>
 
     <HowItWorks />
+
+    <Expertise />
   </Layout>
 );
 

@@ -30,6 +30,9 @@ module.exports = {
         'constrained-md': '4.2rem',
         'constrained-lg': 'max(6.2rem, calc((100vw - 1600px) / 2 + 6.2rem))',
       },
+      minWidth: {
+        32: '8rem',
+      },
       minHeight: {
         80: '20rem',
       },
@@ -79,6 +82,9 @@ module.exports = {
         },
         'summary::-webkit-details-marker': {
           display: 'none',
+        },
+        '.clip-shape': {
+          clipPath: 'url(#shape)',
         },
       });
     }),
