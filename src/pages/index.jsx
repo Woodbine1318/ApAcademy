@@ -8,6 +8,7 @@ import Pattern from '../components/Pattern';
 import Callout from '../components/Callout';
 import HowItWorks from '../components/HomePage/how-it-works';
 import Expertise from '../components/HomePage/expertise';
+import Support from '../components/HomePage/support';
 
 const IndexPage = () => (
   <Layout>
@@ -56,6 +57,8 @@ const IndexPage = () => (
     <HowItWorks />
 
     <Expertise />
+
+    <Support />
   </Layout>
 );
 
