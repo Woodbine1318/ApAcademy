@@ -80,6 +80,9 @@ module.exports = {
         '.webkit-mask-image': {
           '-webkit-mask-image': '-webkit-radial-gradient(white, black)',
         },
+        'summary::marker': {
+          content: '""',
+        },
         'summary::-webkit-details-marker': {
           display: 'none',
         },

@@ -5,7 +5,7 @@ import Pattern from '../Pattern';
 const HowItWorks = () => {
   return (
     <section
-      className="grid grid-cols-1 py-16 px-constrained md:px-constrained-md md:grid-cols-2 md:items-start md:pt-32 lg:px-constrained-lg"
+      className="grid grid-cols-1 py-16 px-constrained md:px-constrained-md md:grid-cols-2 md:items-start md:py-36 lg:px-constrained-lg"
       id="how-it-works"
     >
       <h2 className="text-lg text-center mb-7 md:col-start-2 md:text-left md:mb-10 lg:text-xl lg:mb-16">
