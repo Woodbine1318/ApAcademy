@@ -10,9 +10,9 @@ import HowItWorks from '../components/HomePage/how-it-works';
 import Expertise from '../components/HomePage/expertise';
 import Support from '../components/HomePage/support';
 
-const IndexPage = () => (
+const IndexPage = ({ location: { pathname } }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Online Alternative Provision" canonicalPath={pathname} />
 
     <section className="grid grid-cols-1 pt-36 px-constrained overflow-visible pb-28 md:pt-20 md:grid-cols-2 md:gap-x-24 md:px-constrained-md md:mb-0 md:pb-20 lg:pt-36 lg:gap-x-32 lg:px-constrained-lg">
       <h1 className="relative text-xl mb-4 md:mb-20 md:col-span-2 md:text-2xl lg:mb-11 xl:col-span-1 lg:text-3xl">

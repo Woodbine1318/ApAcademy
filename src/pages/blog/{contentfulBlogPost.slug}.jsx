@@ -4,10 +4,13 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import * as styles from '../../components/styles/RichContent.module.css';
 import Pattern from '../../components/Pattern';
+import SEO from '../../components/SEO';
 
-const BlogPostTemplate = ({ path, data: { contentfulBlogPost: post } }) => {
+const BlogPostTemplate = ({ location: { pathname }, data: { contentfulBlogPost: post } }) => {
   return (
-    <Layout path={path}>
+    <Layout path={pathname}>
+      <SEO title={post.title} description={post.content.childMarkdownRemark.excerpt} canonicalPath={pathname} />
+
       <main className="px-constrained pt-24 pb-16 md:px-constrained-md lg:px-constrained-lg">
         <h1 className="relative text-center text-xl md:text-2xl">
           <Pattern className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20 rotate-12" />
@@ -40,6 +43,7 @@ export const query = graphql`
       title
       content {
         childMarkdownRemark {
+          excerpt(format: PLAIN, truncate: false)
           html
         }
       }
