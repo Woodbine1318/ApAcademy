@@ -21,6 +21,7 @@
     "@fontsource/poppins": "^4.4.5",
     "autoprefixer": "^10.2.6",
     "gatsby": "^3.6.2",
+    "gatsby-plugin-feed": "^3.8.0",
     "gatsby-plugin-gatsby-cloud": "^2.6.1",
     "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-manifest": "^3.6.0",

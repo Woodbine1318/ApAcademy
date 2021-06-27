@@ -57,5 +57,62 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulBlogPost } }) => {
+              return allContentfulBlogPost.edges.map(({ node: post }) => {
+                return {
+                  title: post.title,
+                  date: post.createdAt,
+                  description: post.content.childMarkdownRemark.excerpt,
+                  url: `${site.siteMetadata.siteUrl}/blog/${post.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/blog/${post.slug}`,
+                  custom_elements: [{ 'content:encoded': post.content.childMarkdownRemark.html }],
+                };
+              });
+            },
+            query: `
+              {
+                allContentfulBlogPost(
+                  sort: { fields: createdAt, order: DESC }
+                ) {
+                  edges {
+                    node {
+                      slug
+                      title
+                      createdAt
+                      content {
+                        childMarkdownRemark {
+                          excerpt(format: PLAIN, truncate: false)
+                          html
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'The AP Academy Blog',
+          },
+        ],
+      },
+    },
   ],
 };
