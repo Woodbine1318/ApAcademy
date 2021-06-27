@@ -1,0 +1,24 @@
+.rich-content p {
+  margin-bottom: 1.75rem;
+}
+
+.rich-content h1,
+.rich-content h2,
+.rich-content h3,
+.rich-content h4,
+.rich-content h5,
+.rich-content h6 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .rich-content h1,
+  .rich-content h2,
+  .rich-content h3,
+  .rich-content h4,
+  .rich-content h5,
+  .rich-content h6 {
+    font-size: var(--font-size-xl);
+  }
+}
