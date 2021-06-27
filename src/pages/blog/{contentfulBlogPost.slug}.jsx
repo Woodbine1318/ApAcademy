@@ -9,7 +9,7 @@ import SEO from '../../components/SEO';
 const BlogPostTemplate = ({ location: { pathname }, data: { contentfulBlogPost: post } }) => {
   return (
     <Layout path={pathname}>
-      <SEO title={post.title} description={post.content.childMarkdownRemark.excerpt} canonicalPath={pathname + '/'} />
+      <SEO title={post.title} description={post.content.childMarkdownRemark.excerpt} canonicalPath={pathname} />
 
       <main className="px-constrained pt-24 pb-16 md:px-constrained-md lg:px-constrained-lg">
         <h1 className="relative text-center text-xl md:text-2xl">
