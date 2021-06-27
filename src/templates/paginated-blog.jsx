@@ -3,10 +3,12 @@ import Layout from '../components/Layout';
 import { graphql } from 'gatsby';
 import Pattern from '../components/Pattern';
 import BlogPost from '../components/BlogPost';
+import Pagination from '../components/Pagination';
 
 const PaginatedBlog = ({
+  pageContext: { totalPages, currentPage, hasNextPage, hasPreviousPage },
   data: {
-    allContentfulBlogPost: { edges: posts, pageInfo },
+    allContentfulBlogPost: { edges: posts },
   },
 }) => {
   return (
@@ -21,9 +23,17 @@ const PaginatedBlog = ({
 
         <div className="grid grid-cols-1 gap-8 items-stretch py-32 md:grid-cols-2 md:gap-16 lg:grid-cols-3">
           {posts.map(({ node: post }, index) => (
-            <BlogPost featured={pageInfo.currentPage === 1 && index === 0} post={post} key={post.id} />
+            <BlogPost featured={currentPage === 1 && index === 0} post={post} key={post.id} />
           ))}
         </div>
+
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          hasNextPage={hasNextPage}
+          hasPreviousPage={hasPreviousPage}
+          pathForPage={(page) => (page === 1 ? '/blog' : `/blog/${page}`)}
+        />
       </section>
     </Layout>
   );
@@ -31,7 +41,7 @@ const PaginatedBlog = ({
 
 export const query = graphql`
   query PaginatedBlogQuery($perPage: Int!, $skip: Int!) {
-    allContentfulBlogPost(limit: $perPage, skip: $skip) {
+    allContentfulBlogPost(sort: { fields: createdAt, order: DESC }, limit: $perPage, skip: $skip) {
       edges {
         node {
           id
@@ -50,13 +60,6 @@ export const query = graphql`
           createdAt
           displayCreatedAt: createdAt(formatString: "MMMM Do, YYYY")
         }
-      }
-      pageInfo {
-        currentPage
-        hasNextPage
-        hasPreviousPage
-        perPage
-        totalCount
       }
     }
   }
