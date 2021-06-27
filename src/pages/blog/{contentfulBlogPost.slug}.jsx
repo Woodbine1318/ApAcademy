@@ -5,9 +5,9 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import * as styles from '../../components/styles/RichContent.module.css';
 import Pattern from '../../components/Pattern';
 
-const BlogPostTemplate = ({ data: { contentfulBlogPost: post } }) => {
+const BlogPostTemplate = ({ path, data: { contentfulBlogPost: post } }) => {
   return (
-    <Layout>
+    <Layout path={path}>
       <main className="px-constrained pt-24 pb-16 md:px-constrained-md lg:px-constrained-lg">
         <h1 className="relative text-center text-xl md:text-2xl">
           <Pattern className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20 rotate-12" />

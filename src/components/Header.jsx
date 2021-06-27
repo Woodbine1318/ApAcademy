@@ -4,8 +4,9 @@ import Logo from '../images/logo.svg';
 import PhoneIcon from '../images/phone.svg';
 import MailIcon from '../images/send.svg';
 import { StaticImage } from 'gatsby-plugin-image';
+import { PropTypes } from 'prop-types';
 
-const Header = () => {
+const Header = ({ path }) => {
   const {
     site: {
       siteMetadata: {
@@ -47,13 +48,21 @@ const Header = () => {
               />
 
               <li className="relative mb-5">
-                <a href="#how-it-works">How it works</a>
+                {path !== '/' ? (
+                  <Link to="/#how-it-works">How it works</Link>
+                ) : (
+                  <a href="#how-it-works">How it works</a>
+                )}
               </li>
               <li className="relative mb-5">
-                <a href="#experience">Experience</a>
+                {path !== '/' ? <Link to="/#experience">Experience</Link> : <a href="#experience">Experience</a>}
               </li>
               <li className="relative mb-5">
-                <a href="#academy-support">Academy Support</a>
+                {path !== '/' ? (
+                  <Link to="/#academy-support">Academy Support</Link>
+                ) : (
+                  <a href="#academy-support">Academy Support</a>
+                )}
               </li>
               <li className="relative ">
                 <Link to="/blog">Blog</Link>
@@ -91,13 +100,17 @@ const Header = () => {
         <div className="hidden md:flex flex-col items-end font-semibold xl:flex-row xl:justify-between xl:items-center md:flex-1">
           <ul className="order-1 flex flex-nowrap justify-end items-center xl:order-none lg:justify-start">
             <li className="mr-10">
-              <a href="#how-it-works">How it works</a>
+              {path !== '/' ? <Link to="/#how-it-works">How it works</Link> : <a href="#how-it-works">How it works</a>}
             </li>
             <li className="mr-10">
-              <a href="#experience">Experience</a>
+              {path !== '/' ? <Link to="/#experience">Experience</Link> : <a href="#experience">Experience</a>}
             </li>
             <li className="mr-10">
-              <a href="#academy-support">Academy Support</a>
+              {path !== '/' ? (
+                <Link to="/#academy-support">Academy Support</Link>
+              ) : (
+                <a href="#academy-support">Academy Support</a>
+              )}
             </li>
             <li className="">
               <Link to="/blog">Blog</Link>
@@ -118,6 +131,14 @@ const Header = () => {
       </nav>
     </header>
   );
+};
+
+Header.propTypes = {
+  path: PropTypes.string,
+};
+
+Header.defaultProps = {
+  path: '/',
 };
 
 export default Header;
