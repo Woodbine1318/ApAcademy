@@ -16,7 +16,7 @@ const HowItWorks = () => {
         <Pattern className="absolute top-2/3 left-2/3 transform -translate-x-1/2 -translate-y-1/2 z-0" />
 
         <StaticImage
-          src="../../images/computer.jpg"
+          src="../../images/alternative-provision-online-compueter.jpg"
           alt=""
           className="relative max-w-md border-8 border-white rounded-3xl transform -rotate-6 md:max-w-xl md:-mt-16 md:-ml-56"
         />
