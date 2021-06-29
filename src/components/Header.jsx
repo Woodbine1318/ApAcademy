@@ -40,12 +40,9 @@ const Header = ({ path }) => {
             </summary>
 
             <ul className="absolute top-full left-1/2 transform -translate-x-1/2 text-white font-display text-center py-12 px-16 my-8 w-max">
-              <StaticImage
-                src="../images/dropdown-shape.svg"
-                quality={100}
-                className="absolute top-0 left-0 right-0 bottom-0"
-                objectFit="contain"
-              />
+              <div className="absolute top-0 left-0 right-0 bottom-0">
+                <StaticImage src="../images/dropdown-shape.svg" quality={100} objectFit="contain" />
+              </div>
 
               <li className="relative mb-5">
                 {path !== '/' ? (
@@ -76,12 +73,9 @@ const Header = ({ path }) => {
             </summary>
 
             <ul className="absolute flex flex-col justify-evenly top-full right-0 text-white font-display text-center py-12 px-16 my-8 max-w-sm min-h-80">
-              <StaticImage
-                src="../images/dropdown-shape.svg"
-                quality={100}
-                className="absolute top-0 left-0 right-0 bottom-0"
-                objectFit="contain"
-              />
+              <div className="absolute top-0 left-0 right-0 bottom-0">
+                <StaticImage src="../images/dropdown-shape.svg" quality={100} objectFit="contain" />
+              </div>
 
               <li className="relative flex flex-row flex-nowrap items-center">
                 <PhoneIcon className="hidden mr-7" />
