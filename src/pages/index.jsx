@@ -34,14 +34,14 @@ const IndexPage = ({ location: { pathname } }) => (
         <Pattern className="order-2 lg:order-3 lg:col-start-2 lg:-mt-48 lg:w-96 lg:h-96" />
 
         <StaticImage
-          src="../images/alternative-provision-online-compueter.jpg"
+          src="../images/home-page/alternative-provision-teaching.jpg"
           alt=""
           quality={100}
           className="order-1 border-8 border-white rounded-3xl -mr-28 -mb-56 max-w-md md:max-w-lg lg:max-w-2xl"
         />
 
         <StaticImage
-          src="../images/alternative-provision-online-school.jpg"
+          src="../images/home-page/alternative-provision-online-provision.jpeg"
           alt=""
           quality={100}
           className="order-3 border-8 border-white rounded-3xl col-start-2 -ml-28 max-w-xs md:max-w-md lg:order-2 lg:max-w-xl"

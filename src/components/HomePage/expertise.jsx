@@ -1,3 +1,4 @@
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import Pattern from '../Pattern';
 
@@ -21,7 +22,7 @@ const Expertise = () => {
         easy navigation, student interaction and lesson activities.
       </p>
 
-      <div className="flex flex-col items-stretch pt-32 md:flex-row md:justify-evenly md:items-start lg:items-center lg:py-48">
+      <div className="flex flex-col items-stretch pt-32 md:flex-row md:justify-evenly md:items-start lg:items-center lg:pt-48 lg:pb-24">
         <p className="flex flex-row items-start md:flex-col md:text-center md:items-center md:flex-1 lg:flex-row mb-16 md:mb-0 md:mr-16 lg:text-left">
           <span className="bg-shape flex justify-start pl-7 pt-2 items-center min-w-32 h-20 font-semibold text-xl text-white mr-7 bg-no-repeat bg-center md:mr-0 md:mb-7 lg:mb-0 lg:mr-7">
             +10
@@ -43,6 +44,12 @@ const Expertise = () => {
           <span className="text-md">Local authorities supported</span>
         </p>
       </div>
+
+      <StaticImage
+        src="../../images/home-page/alternative-provision-online.png"
+        alt=""
+        className="block max-w-5xl mx-auto -mb-32"
+      />
     </section>
   );
 };
