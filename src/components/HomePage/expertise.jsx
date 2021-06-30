@@ -48,7 +48,7 @@ const Expertise = () => {
       <StaticImage
         src="../../images/home-page/alternative-provision-online.png"
         alt=""
-        className="block max-w-5xl mx-auto -mb-32"
+        className="block max-w-5xl mx-auto -mb-16 md:-mb-32"
       />
     </section>
   );
