@@ -1,30 +1,14 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import Logo from '../images/logo.svg';
 import PhoneIcon from '../images/phone.svg';
 import MailIcon from '../images/send.svg';
 import { StaticImage } from 'gatsby-plugin-image';
 import { PropTypes } from 'prop-types';
+import { useContactInfo } from '../hooks/useContactInfo';
 
 const Header = ({ path }) => {
-  const {
-    site: {
-      siteMetadata: {
-        contactInfo: { phone, email },
-      },
-    },
-  } = useStaticQuery(graphql`
-    query HeaderQuery {
-      site {
-        siteMetadata {
-          contactInfo {
-            phone
-            email
-          }
-        }
-      }
-    }
-  `);
+  const { phone, email } = useContactInfo();
 
   return (
     <header className="relative px-constrained py-14 md:px-constrained-md lg:px-constrained-lg z-50">
