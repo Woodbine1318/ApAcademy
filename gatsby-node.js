@@ -3,11 +3,27 @@ exports.createPages = async ({ actions, graphql }) => {
     query CreatePagesQuery {
       allContentfulBlogPost {
         totalCount
+
+        edges {
+          next {
+            slug
+            title
+          }
+
+          node {
+            slug
+          }
+
+          previous {
+            slug
+            title
+          }
+        }
       }
     }
   `);
 
-  const { totalCount } = data.allContentfulBlogPost;
+  const { totalCount, edges: posts } = data.allContentfulBlogPost;
   const postsPerPage = Number(process.env.GATSBY_POSTS_PER_PAGE);
   // We'll display a 7th "latest" post on the first page so we need to remove it from the
   // total count
@@ -26,6 +42,18 @@ exports.createPages = async ({ actions, graphql }) => {
         hasPreviousPage: currentPage > 1,
         perPage: currentPage === 1 ? postsPerPage + 1 : postsPerPage,
         skip: currentPage === 1 ? 0 : 1 + i * postsPerPage,
+      },
+    });
+  });
+
+  posts.forEach(({ node: post, previous, next }) => {
+    actions.createPage({
+      path: `/blog/${post.slug}`,
+      component: require.resolve('./src/templates/blog-post.jsx'),
+      context: {
+        slug: post.slug,
+        previous,
+        next,
       },
     });
   });
