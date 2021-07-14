@@ -10,7 +10,7 @@ module.exports = {
     author: '@theapacademy',
     contactInfo: {
       phone: '02071128105',
-      email: 'enquiries@theapacademy.co.uk',
+      email: 'info@theapacademy.co.uk',
     },
   },
   plugins: [
