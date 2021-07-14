@@ -11,9 +11,19 @@ const Footer = () => {
     query FooterQuery {
       footer: contentfulNavigationBar(name: { eq: "Footer" }) {
         links {
-          id
-          text
-          entry {
+          __typename
+          ... on ContentfulLink {
+            id
+            text
+            url
+            entry {
+              id
+              title
+              slug
+            }
+          }
+
+          ... on ContentfulPage {
             id
             title
             slug
@@ -22,8 +32,6 @@ const Footer = () => {
       }
     }
   `);
-
-  console.log(footer);
 
   return (
     <footer className="bg-primary-200 pt-16 pb-4 px-constrained md:px-constrained-md md:pb-16 lg:px-constrained-lg">
@@ -35,11 +43,17 @@ const Footer = () => {
 
           <nav className="mb-28 md:mb-0">
             <ul>
-              {footer.links.map((link) => (
-                <li className="font-semibold text-md" key={link.id}>
-                  <Link to={`/blog/${link.entry?.slug}`}>{link.text}</Link>
-                </li>
-              ))}
+              {footer.links.map((link) =>
+                link.__typename === 'ContentfulLink' ? (
+                  <li className="text-md" key={link.id}>
+                    <Link to={link.url ?? `/blog/${link.entry?.slug}`}>{link.text}</Link>
+                  </li>
+                ) : (
+                  <li className="text-md" key={link.id}>
+                    <Link to={`/${link.slug}`}>{link.title}</Link>
+                  </li>
+                ),
+              )}
             </ul>
           </nav>
         </div>
