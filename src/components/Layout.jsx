@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
             </button>
           )}
         </div>
+
         <div>
           <Header />
         </div>
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
       <div className="flex">
         {/* Sidebar */}
         <Sidebar change={sidebar} />
+
         <div>{children}</div>
       </div>
     </div>

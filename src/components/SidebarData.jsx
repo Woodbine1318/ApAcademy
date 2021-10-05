@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
 import PhoneIcon from '../images/phone.svg';
 import MailIcon from '../images/send.svg';
 
