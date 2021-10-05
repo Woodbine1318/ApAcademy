@@ -1,0 +1,41 @@
+import React, { useState, Component } from 'react';
+import PropTypes from 'prop-types';
+import { SidebarDataMenu, SidebarDataContact } from './SidebarData';
+
+const Sidebar = (props) => {
+  const sidebar = props.change;
+
+  return (
+    <div className={'sidebar rounded-br-2xl rounded-tr-2xl md:hidden' + (sidebar ? ' flex' : ' hidden')}>
+      <div className="flex-grow items-center w-48 text-center">
+        <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+          <p className="mt-5 font-black" style={{ fontSize: '1.8rem' }}>
+            Menu
+          </p>
+          {SidebarDataMenu.map((item, index) => {
+            return (
+              <li key={index} className="relative m-2">
+                <a className="text-center" href={item.path}>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
+          <p className="mt-5 font-black mb-2" style={{ fontSize: '1.8rem' }}>
+            Contact
+          </p>
+          {SidebarDataContact.map((item, index) => {
+            return (
+              <li key={index} className="relative m-2 flex flex-row items-center justify-center">
+                {item.icon}
+                <a>{item.title}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;

@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import Logo from '../images/logo.svg';
 import PhoneIcon from '../images/phone.svg';
 import MailIcon from '../images/send.svg';
-import { StaticImage } from 'gatsby-plugin-image';
 import { PropTypes } from 'prop-types';
 import { useContactInfo } from '../hooks/useContactInfo';
 
@@ -17,7 +16,7 @@ const Header = ({ path }) => {
           <Logo />
         </Link>
 
-        <div className="flex flex-row flex-nowrap justify-end items-center md:hidden">
+        {/* <div className="flex flex-row flex-nowrap items-center md:hidden"> 
           <details className="relative mr-7">
             <summary className="relative font-display w-40 h-16 bg-button-shape bg-no-repeat bg-contain bg-center text-center cursor-pointer outline-none">
               <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Menu</span>
@@ -73,7 +72,7 @@ const Header = ({ path }) => {
               </li>
             </ul>
           </details>
-        </div>
+        </div> */}
 
         <div className="hidden md:flex flex-col items-end font-semibold xl:flex-row xl:justify-between xl:items-center md:flex-1">
           <ul className="order-1 flex flex-nowrap justify-end items-center xl:order-none lg:justify-start">
