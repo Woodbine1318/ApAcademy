@@ -12,10 +12,10 @@ const Layout = ({ children }) => {
   return (
     <div className="bg-background min-h-screen">
       <div className="flex">
-        <div className="ml-5 flex flex-grow flex-nowrap items-center md:hidden">
+        <div className="ml-5 flex flex-grow flex-nowrap items-center md:hidden z-20">
           {sidebar ? (
             <button onClick={() => setSidebar(false)}>
-              <CloseIcon style={{ width: '40', height: '40' }} />
+              <CloseIcon className="w-16" style={{ width: '40', height: '40' }} />
             </button>
           ) : (
             <button onClick={() => setSidebar(true)}>
@@ -24,17 +24,13 @@ const Layout = ({ children }) => {
           )}
         </div>
 
-        <div>
-          <Header />
-        </div>
+        <Header />
       </div>
 
-      <div className="flex">
-        {/* Sidebar */}
-        <Sidebar change={sidebar} />
+      {/* Sidebar */}
+      <Sidebar change={sidebar} />
 
-        <div>{children}</div>
-      </div>
+      <div>{children}</div>
     </div>
   );
 };

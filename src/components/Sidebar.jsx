@@ -1,8 +1,8 @@
-import React, { useState, Component } from 'react';
+import React from 'react';
 import { useSiteMetadata } from '../hooks/queryData';
 import PhoneIcon from '../images/phone.svg';
 import MailIcon from '../images/send.svg';
-import { SidebarDataMenu, SidebarDataContact } from './SidebarData';
+import { SidebarDataMenu } from './SidebarData';
 
 const Sidebar = (props) => {
   const sidebar = props.change;
@@ -10,12 +10,14 @@ const Sidebar = (props) => {
   const { phone, email } = useSiteMetadata();
 
   return (
-    <div className={'sidebar rounded-br-2xl rounded-tr-2xl md:hidden' + (sidebar ? ' flex' : ' hidden')}>
+    <div
+      className={
+        'sidebar fixed top-0 left-0 bottom-0 right-0 z-10 pt-48 rounded-br-2xl rounded-tr-2xl md:hidden' +
+        (sidebar ? ' flex' : ' hidden')
+      }
+    >
       <div className="flex-grow items-center w-48 text-center">
         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-          <p className="mt-5 font-black" style={{ fontSize: '1.8rem' }}>
-            Menu
-          </p>
           {SidebarDataMenu.map((item, index) => {
             return (
               <li key={index} className="relative m-2">
@@ -25,15 +27,12 @@ const Sidebar = (props) => {
               </li>
             );
           })}
-          <p className="mt-5 font-black mb-2" style={{ fontSize: '1.8rem' }}>
-            Contact
-          </p>
 
-          <li className="relative flex flex-row flex-nowrap items-center">
+          <li className="relative flex flex-row flex-nowrap justify-center items-center mt-12">
             <PhoneIcon className="mr-2" style={{ width: '25', height: '25' }} />
             <a href={`tel:${phone}`}>{phone}</a>
           </li>
-          <li className="relative flex flex-row flex-nowrap items-center mt-5 ">
+          <li className="relative flex flex-row flex-nowrap justify-center items-center mt-5 ">
             <MailIcon className="mr-2" style={{ width: '45', height: '45' }} />
             <a href={`mailto:${email}`} className="break-all">
               {email}

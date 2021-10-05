@@ -10,9 +10,9 @@ const Header = ({ path }) => {
   const { phone, email } = useContactInfo();
 
   return (
-    <header className="relative px-constrained py-14 md:px-constrained-md lg:px-constrained-lg z-50">
+    <header className="w-screen relative px-constrained py-14 md:px-constrained-md lg:px-constrained-lg z-50">
       <nav className="flex flex-row flex-nowrap justify-between items-center md:items-start xl:items-center">
-        <Link to="/" aria-label="Home" className="lg:mr-16">
+        <Link to="/" aria-label="Home" className="lg:mr-16 z-0">
           <Logo />
         </Link>
 
